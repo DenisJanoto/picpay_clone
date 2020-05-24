@@ -68,6 +68,12 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
         }
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+        tableView.reloadData()
+    }
+    
+
     
     func callApi(){
         ApiController.loadData(page: x) { (response_) in
