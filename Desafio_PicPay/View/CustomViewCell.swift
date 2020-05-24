@@ -37,37 +37,21 @@ class CustomViewCell: UITableViewCell {
         urlImagem = contatos.img
         name.text = contatos.name
         userName.text = contatos.username
-        kingFicher(pathImage: urlImagem)
-    }
-    
-    //MONTAR CELULA COM A PESQUISA DA SEARCHBAR
-    func prepararCelulaComPesquisa(nome:String,id:String,imagem:String){
-        urlImagem = imagem
-        name.text = nome
-        userName.text = id
-        kingFicher(pathImage: urlImagem)
         
+        kingFicher(pathImage: urlImagem)
     }
-    
-    
-    
-    
+
     //KINGFISHER DOWNLOAD IMAGE
     func kingFicher(pathImage:String){
         if let url = URL.init(string:self.urlImagem){
             let resource = ImageResource(downloadURL: url, cacheKey: self.urlImagem)
             imageUser.kf.indicatorType = .activity //Placeholder nas imagens antes de carregar
             imageUser.kf.setImage(with: resource)
-            
         }else{
             imageUser.image = nil
         }
-        
         imageUser.layer.cornerRadius = imageUser.frame.size.height/2 //Deixa imagem redonda
-        
     }
-    
-    
 }
 
 

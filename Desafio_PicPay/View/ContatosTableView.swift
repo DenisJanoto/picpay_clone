@@ -109,9 +109,6 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
             return cell
         }else{
             cell.prepararCelula(contatos: dadosFiltrados[indexPath.row])
-            
-            
-            //cell.prepararCelulaComPesquisa(nome: arrayNomes[indexPath.row], id: idUsuario[indexPath.row], imagem: imagemUsuario[indexPath.row])
             return cell
         }
     }
