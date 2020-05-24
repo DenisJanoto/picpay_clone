@@ -1,0 +1,6 @@
+framework module Pods_Desafio_PicPay {
+  umbrella header "Pods-Desafio_PicPay-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,29 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921C9F6C247AB3840067EC31 /* ContatosTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9F6B247AB3840067EC31 /* ContatosTableView.swift */; };
+		921C9F6E247AB3AD0067EC31 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9F6D247AB3AD0067EC31 /* CustomViewCell.swift */; };
+		921C9F70247AB5590067EC31 /* receivedJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9F6F247AB5590067EC31 /* receivedJson.swift */; };
+		921CDCFD247ADC7300707C0B /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CDCFC247ADC7300707C0B /* ApiController.swift */; };
+		921CDCFF247ADE2A00707C0B /* Contatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CDCFE247ADE2A00707C0B /* Contatos.swift */; };
 		921E35A3247AB1D700B82968 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921E35A2247AB1D700B82968 /* AppDelegate.swift */; };
 		921E35A5247AB1D700B82968 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921E35A4247AB1D700B82968 /* SceneDelegate.swift */; };
-		921E35A7247AB1D700B82968 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921E35A6247AB1D700B82968 /* ViewController.swift */; };
 		921E35AA247AB1D700B82968 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921E35A8247AB1D700B82968 /* Main.storyboard */; };
 		921E35AD247AB1D700B82968 /* Desafio_PicPay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 921E35AB247AB1D700B82968 /* Desafio_PicPay.xcdatamodeld */; };
 		921E35AF247AB1D900B82968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921E35AE247AB1D900B82968 /* Assets.xcassets */; };
 		921E35B2247AB1D900B82968 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921E35B0247AB1D900B82968 /* LaunchScreen.storyboard */; };
+		FDF1207A3443643BD4428273 /* Pods_Desafio_PicPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CC9397048B85FA856B05F1 /* Pods_Desafio_PicPay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53B30138B4B756228904F123 /* Pods-Desafio_PicPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_PicPay.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_PicPay/Pods-Desafio_PicPay.debug.xcconfig"; sourceTree = "<group>"; };
+		5F83A8CA2AB01AD47F608E0C /* Pods-Desafio_PicPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_PicPay.release.xcconfig"; path = "Target Support Files/Pods-Desafio_PicPay/Pods-Desafio_PicPay.release.xcconfig"; sourceTree = "<group>"; };
+		921C9F6B247AB3840067EC31 /* ContatosTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosTableView.swift; sourceTree = "<group>"; };
+		921C9F6D247AB3AD0067EC31 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		921C9F6F247AB5590067EC31 /* receivedJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receivedJson.swift; sourceTree = "<group>"; };
+		921CDCFC247ADC7300707C0B /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		921CDCFE247ADE2A00707C0B /* Contatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contatos.swift; sourceTree = "<group>"; };
 		921E359F247AB1D600B82968 /* Desafio_PicPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Desafio_PicPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		921E35A2247AB1D700B82968 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		921E35A4247AB1D700B82968 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		921E35A6247AB1D700B82968 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		921E35A9247AB1D700B82968 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		921E35AC247AB1D700B82968 /* Desafio_PicPay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Desafio_PicPay.xcdatamodel; sourceTree = "<group>"; };
 		921E35AE247AB1D900B82968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921E35B1247AB1D900B82968 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921E35B3247AB1D900B82968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CC9397048B85FA856B05F1 /* Pods_Desafio_PicPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_PicPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +45,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF1207A3443643BD4428273 /* Pods_Desafio_PicPay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921C9F67247AB28D0067EC31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				921C9F6F247AB5590067EC31 /* receivedJson.swift */,
+				921CDCFE247ADE2A00707C0B /* Contatos.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		921C9F68247AB2940067EC31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				921C9F6B247AB3840067EC31 /* ContatosTableView.swift */,
+				921C9F6D247AB3AD0067EC31 /* CustomViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		921C9F6A247AB2A40067EC31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				921CDCFC247ADC7300707C0B /* ApiController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		921E3596247AB1D600B82968 = {
 			isa = PBXGroup;
 			children = (
 				921E35A1247AB1D600B82968 /* Desafio_PicPay */,
 				921E35A0247AB1D600B82968 /* Products */,
+				F2F3394B7661A39B4E435561 /* Pods */,
+				A969D8B343B5C32A11612001 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,9 +99,11 @@
 		921E35A1247AB1D600B82968 /* Desafio_PicPay */ = {
 			isa = PBXGroup;
 			children = (
+				921C9F67247AB28D0067EC31 /* Model */,
+				921C9F68247AB2940067EC31 /* View */,
+				921C9F6A247AB2A40067EC31 /* Controller */,
 				921E35A2247AB1D700B82968 /* AppDelegate.swift */,
 				921E35A4247AB1D700B82968 /* SceneDelegate.swift */,
-				921E35A6247AB1D700B82968 /* ViewController.swift */,
 				921E35A8247AB1D700B82968 /* Main.storyboard */,
 				921E35AE247AB1D900B82968 /* Assets.xcassets */,
 				921E35B0247AB1D900B82968 /* LaunchScreen.storyboard */,
@@ -70,6 +113,23 @@
 			path = Desafio_PicPay;
 			sourceTree = "<group>";
 		};
+		A969D8B343B5C32A11612001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2CC9397048B85FA856B05F1 /* Pods_Desafio_PicPay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2F3394B7661A39B4E435561 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53B30138B4B756228904F123 /* Pods-Desafio_PicPay.debug.xcconfig */,
+				5F83A8CA2AB01AD47F608E0C /* Pods-Desafio_PicPay.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 921E35B6247AB1D900B82968 /* Build configuration list for PBXNativeTarget "Desafio_PicPay" */;
 			buildPhases = (
+				31DD18002F3352BE12164F6A /* [CP] Check Pods Manifest.lock */,
 				921E359B247AB1D600B82968 /* Sources */,
 				921E359C247AB1D600B82968 /* Frameworks */,
 				921E359D247AB1D600B82968 /* Resources */,
+				D9633E4C04F26C4C59DFA552 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,12 +198,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31DD18002F3352BE12164F6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Desafio_PicPay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9633E4C04F26C4C59DFA552 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Desafio_PicPay/Pods-Desafio_PicPay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Desafio_PicPay/Pods-Desafio_PicPay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Desafio_PicPay/Pods-Desafio_PicPay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		921E359B247AB1D600B82968 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				921E35A7247AB1D700B82968 /* ViewController.swift in Sources */,
+				921C9F6C247AB3840067EC31 /* ContatosTableView.swift in Sources */,
+				921C9F6E247AB3AD0067EC31 /* CustomViewCell.swift in Sources */,
+				921CDCFD247ADC7300707C0B /* ApiController.swift in Sources */,
+				921C9F70247AB5590067EC31 /* receivedJson.swift in Sources */,
+				921CDCFF247ADE2A00707C0B /* Contatos.swift in Sources */,
 				921E35A3247AB1D700B82968 /* AppDelegate.swift in Sources */,
 				921E35A5247AB1D700B82968 /* SceneDelegate.swift in Sources */,
 				921E35AD247AB1D700B82968 /* Desafio_PicPay.xcdatamodeld in Sources */,
@@ -286,6 +394,7 @@
 		};
 		921E35B7247AB1D900B82968 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53B30138B4B756228904F123 /* Pods-Desafio_PicPay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,12 +407,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Desafio-PicPay";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		921E35B8247AB1D900B82968 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F83A8CA2AB01AD47F608E0C /* Pods-Desafio_PicPay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -316,7 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Desafio-PicPay";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

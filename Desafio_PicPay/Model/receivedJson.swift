@@ -6,4 +6,9 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
-import Foundation
+struct receivedJson: Codable {
+    let id: Int
+    let name: String
+    let img: String
+    let username: String
+}
