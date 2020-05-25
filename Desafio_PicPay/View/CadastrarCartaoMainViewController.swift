@@ -16,6 +16,7 @@ class CadastrarCartaoMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        
         //change background color
         self.view.backgroundColor = UIColor(named: "backGroundColor")
 

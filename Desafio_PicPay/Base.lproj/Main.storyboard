@@ -30,17 +30,17 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMl-8E-c6k">
-                                            <rect key="frame" x="113" y="30" width="96.5" height="21"/>
+                                            <rect key="frame" x="113" y="30" width="82.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Ddc-0z-AHz"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ow-v5-6JP">
-                                            <rect key="frame" x="113" y="59" width="281" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <rect key="frame" x="113" y="59" width="281" height="19"/>
+                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -116,7 +116,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="yEZ-mZ-idl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -126,7 +126,7 @@
                                     <constraint firstAttribute="width" constant="284" id="55v-dJ-KAW"/>
                                     <constraint firstAttribute="height" constant="72" id="wQs-zu-IWW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="65" id="2Nv-Mg-TVu"/>
                                     <constraint firstAttribute="width" constant="374" id="FWO-ZC-QtL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Cadastrar Cartão">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -150,10 +150,10 @@
                                     <segue destination="9iH-Fe-BFf" kind="show" identifier="segueCadastrar" id="bbu-YW-ems"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bank card icon" translatesAutoresizingMaskIntoConstraints="NO" id="JBk-2i-xV2">
-                                <rect key="frame" x="96" y="196" width="223" height="174"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank card icon" translatesAutoresizingMaskIntoConstraints="NO" id="JBk-2i-xV2">
+                                <rect key="frame" x="87" y="153" width="240" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="174" id="dfC-bq-vnX"/>
+                                    <constraint firstAttribute="height" constant="240" id="dfC-bq-vnX"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
@@ -164,9 +164,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="JBk-2i-xV2" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="96" id="4wH-yC-Bwh"/>
+                            <constraint firstItem="JBk-2i-xV2" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="87" id="4wH-yC-Bwh"/>
                             <constraint firstItem="9hf-LU-dkd" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="48" id="B3K-Lg-iSj"/>
-                            <constraint firstItem="JBk-2i-xV2" firstAttribute="top" secondItem="Zf9-Mk-v9J" secondAttribute="top" constant="108" id="Der-dp-GGt"/>
+                            <constraint firstItem="JBk-2i-xV2" firstAttribute="top" secondItem="Zf9-Mk-v9J" secondAttribute="top" constant="65" id="Der-dp-GGt"/>
                             <constraint firstItem="Zf9-Mk-v9J" firstAttribute="trailing" secondItem="FsQ-wH-GJz" secondAttribute="trailing" constant="65" id="JVb-Mn-bTA"/>
                             <constraint firstItem="FsQ-wH-GJz" firstAttribute="top" secondItem="9hf-LU-dkd" secondAttribute="bottom" constant="7" id="Nfe-6h-NTk"/>
                             <constraint firstItem="Zf9-Mk-v9J" firstAttribute="trailing" secondItem="9hf-LU-dkd" secondAttribute="trailing" constant="48" id="RJM-N3-zyg"/>
@@ -175,7 +175,7 @@
                             <constraint firstItem="Zf9-Mk-v9J" firstAttribute="trailing" secondItem="xdi-24-K8L" secondAttribute="trailing" constant="20" id="ew3-z7-uVb"/>
                             <constraint firstItem="xdi-24-K8L" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="20" id="mc9-RJ-byF"/>
                             <constraint firstItem="JBk-2i-xV2" firstAttribute="centerX" secondItem="9hf-LU-dkd" secondAttribute="centerX" id="opy-Kv-G8m"/>
-                            <constraint firstItem="9hf-LU-dkd" firstAttribute="top" secondItem="JBk-2i-xV2" secondAttribute="bottom" constant="31" id="voA-Da-4GR"/>
+                            <constraint firstItem="9hf-LU-dkd" firstAttribute="top" secondItem="JBk-2i-xV2" secondAttribute="bottom" constant="8" id="voA-Da-4GR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zf9-Mk-v9J"/>
                     </view>
@@ -201,7 +201,7 @@
                                 <rect key="frame" x="20" y="762" width="374" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
                                 <state key="normal" title="Cadastrar Cartão">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -217,7 +217,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cadastrar cartão" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUb-of-tkF">
                                 <rect key="frame" x="28" y="120" width="358" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -226,7 +226,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
@@ -248,7 +248,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
@@ -270,7 +270,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
@@ -292,7 +292,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
