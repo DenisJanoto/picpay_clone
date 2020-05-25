@@ -68,6 +68,7 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
         }
     }
     
+    //BOTÃO CANCELAR NA SEARCHBAR - RECARREGA A TABLEVIEW COM TODOS DADOS
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
         tableView.reloadData()

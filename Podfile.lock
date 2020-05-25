@@ -2,17 +2,21 @@ PODS:
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
+  - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
   - Kingfisher (~> 5.13.4)
+  - TextFieldEffects
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: ec7e7ad4726205e1d71b010a2f6258de0ee7828f
+PODFILE CHECKSUM: da508a8e47cc5266abbcaa392a4216a33a621779
 
 COCOAPODS: 1.9.1

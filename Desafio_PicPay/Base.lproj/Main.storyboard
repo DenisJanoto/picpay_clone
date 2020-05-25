@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mCq-De-EaN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9iH-Fe-BFf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -111,15 +111,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CADASTRO DE CARTÃO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-LU-dkd">
-                                <rect key="frame" x="103" y="438" width="208" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre um cartão de crédito" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-LU-dkd">
+                                <rect key="frame" x="48" y="401" width="318" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="yEZ-mZ-idl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="JBk-2i-xV2">
+                                <rect key="frame" x="117" y="261" width="180" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="KyW-Va-4aP"/>
+                                    <constraint firstAttribute="height" constant="100" id="NAl-jP-Ntn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para fazer pagamentos para outras pessoas você precisa cadastrar um cartão de crédito pessoal." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-wH-GJz">
+                                <rect key="frame" x="65" y="504" width="284" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="55v-dJ-KAW"/>
+                                    <constraint firstAttribute="height" constant="72" id="wQs-zu-IWW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdi-24-K8L">
+                                <rect key="frame" x="20" y="761" width="374" height="65"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="2Nv-Mg-TVu"/>
+                                    <constraint firstAttribute="width" constant="374" id="FWO-ZC-QtL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Cadastrar Cartão">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <real key="value" value="32.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9hf-LU-dkd" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="48" id="B3K-Lg-iSj"/>
+                            <constraint firstItem="9hf-LU-dkd" firstAttribute="top" secondItem="JBk-2i-xV2" secondAttribute="bottom" constant="40" id="E3w-bf-adm"/>
+                            <constraint firstItem="Zf9-Mk-v9J" firstAttribute="trailing" secondItem="FsQ-wH-GJz" secondAttribute="trailing" constant="65" id="JVb-Mn-bTA"/>
+                            <constraint firstItem="FsQ-wH-GJz" firstAttribute="top" secondItem="9hf-LU-dkd" secondAttribute="bottom" constant="7" id="Nfe-6h-NTk"/>
+                            <constraint firstItem="JBk-2i-xV2" firstAttribute="top" secondItem="Zf9-Mk-v9J" secondAttribute="top" constant="173" id="Np9-Nu-77B"/>
+                            <constraint firstItem="Zf9-Mk-v9J" firstAttribute="trailing" secondItem="9hf-LU-dkd" secondAttribute="trailing" constant="48" id="RJM-N3-zyg"/>
+                            <constraint firstItem="Zf9-Mk-v9J" firstAttribute="bottom" secondItem="xdi-24-K8L" secondAttribute="bottom" constant="36" id="Y3P-WK-8Ax"/>
+                            <constraint firstItem="FsQ-wH-GJz" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="65" id="YIJ-pW-8dd"/>
+                            <constraint firstItem="Zf9-Mk-v9J" firstAttribute="trailing" secondItem="xdi-24-K8L" secondAttribute="trailing" constant="20" id="ew3-z7-uVb"/>
+                            <constraint firstItem="xdi-24-K8L" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="20" id="mc9-RJ-byF"/>
+                            <constraint firstItem="Zf9-Mk-v9J" firstAttribute="trailing" secondItem="JBk-2i-xV2" secondAttribute="trailing" constant="117" id="sv4-GF-dMl"/>
+                            <constraint firstItem="JBk-2i-xV2" firstAttribute="leading" secondItem="Zf9-Mk-v9J" secondAttribute="leading" constant="117" id="vHb-h4-CcR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zf9-Mk-v9J"/>
                     </view>
                     <navigationItem key="navigationItem" id="p0z-oY-3yx"/>
@@ -136,15 +191,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSERIR DADOS DO CARTÃO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUb-of-tkF">
-                                <rect key="frame" x="56" y="438" width="302" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26d-pS-dBt">
+                                <rect key="frame" x="20" y="762" width="374" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Cadastrar Cartão">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <real key="value" value="32.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número do Cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0h-bI-vqk" customClass="KaedeTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="28" y="227" width="358" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="358" id="1dJ-b2-d9Y"/>
+                                    <constraint firstAttribute="height" constant="40" id="Y6U-QE-psm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cadastrar cartão" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUb-of-tkF">
+                                <rect key="frame" x="28" y="120" width="358" height="52"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c0h-bI-vqk" firstAttribute="leading" secondItem="Bv7-g0-CHD" secondAttribute="leading" constant="28" id="di0-jq-KHZ"/>
+                            <constraint firstItem="Bv7-g0-CHD" firstAttribute="trailing" secondItem="c0h-bI-vqk" secondAttribute="trailing" constant="28" id="pro-l7-rBr"/>
+                            <constraint firstItem="c0h-bI-vqk" firstAttribute="top" secondItem="PUb-of-tkF" secondAttribute="bottom" constant="55" id="xQP-VL-whQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bv7-g0-CHD"/>
                     </view>
                 </viewController>
@@ -171,4 +267,7 @@
             <point key="canvasLocation" x="-136.23188405797103" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="card" width="256" height="256"/>
+    </resources>
 </document>
