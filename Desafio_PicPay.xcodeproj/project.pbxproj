@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920E0637247C33F0006567FE /* CadastrarCartoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E0636247C33F0006567FE /* CadastrarCartoesViewController.swift */; };
+		920E063B247C5F63006567FE /* CadastrarCartaoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E063A247C5F63006567FE /* CadastrarCartaoMainViewController.swift */; };
 		921C9F6C247AB3840067EC31 /* ContatosTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9F6B247AB3840067EC31 /* ContatosTableView.swift */; };
 		921C9F6E247AB3AD0067EC31 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9F6D247AB3AD0067EC31 /* CustomViewCell.swift */; };
 		921C9F70247AB5590067EC31 /* receivedJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9F6F247AB5590067EC31 /* receivedJson.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		53B30138B4B756228904F123 /* Pods-Desafio_PicPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_PicPay.debug.xcconfig"; path = "Target Support Files/Pods-Desafio_PicPay/Pods-Desafio_PicPay.debug.xcconfig"; sourceTree = "<group>"; };
 		5F83A8CA2AB01AD47F608E0C /* Pods-Desafio_PicPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio_PicPay.release.xcconfig"; path = "Target Support Files/Pods-Desafio_PicPay/Pods-Desafio_PicPay.release.xcconfig"; sourceTree = "<group>"; };
+		920E0636247C33F0006567FE /* CadastrarCartoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarCartoesViewController.swift; sourceTree = "<group>"; };
+		920E063A247C5F63006567FE /* CadastrarCartaoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CadastrarCartaoMainViewController.swift; path = "/Users/denis/Documents/Swift Projects/Desafio_PicPay/Desafio_PicPay/View/CadastrarCartaoMainViewController.swift"; sourceTree = "<absolute>"; };
 		921C9F6B247AB3840067EC31 /* ContatosTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatosTableView.swift; sourceTree = "<group>"; };
 		921C9F6D247AB3AD0067EC31 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		921C9F6F247AB5590067EC31 /* receivedJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receivedJson.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 			children = (
 				921C9F6B247AB3840067EC31 /* ContatosTableView.swift */,
 				921C9F6D247AB3AD0067EC31 /* CustomViewCell.swift */,
+				920E063A247C5F63006567FE /* CadastrarCartaoMainViewController.swift */,
+				920E0636247C33F0006567FE /* CadastrarCartoesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920E0637247C33F0006567FE /* CadastrarCartoesViewController.swift in Sources */,
+				920E063B247C5F63006567FE /* CadastrarCartaoMainViewController.swift in Sources */,
 				921C9F6C247AB3840067EC31 /* ContatosTableView.swift in Sources */,
 				921C9F6E247AB3AD0067EC31 /* CustomViewCell.swift in Sources */,
 				921CDCFD247ADC7300707C0B /* ApiController.swift in Sources */,
