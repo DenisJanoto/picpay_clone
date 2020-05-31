@@ -30,7 +30,7 @@ class CustomViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
+ 
     
     //MONTAR CELULA SEM A PESQUISA DA SEARCHBAR
     func prepararCelula(contatos:receivedJson){

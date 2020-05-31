@@ -1,22 +1,26 @@
 PODS:
+  - Alamofire (5.1.0)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
   - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.1)
   - Kingfisher (~> 5.13.4)
   - TextFieldEffects
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Kingfisher
     - TextFieldEffects
 
 SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: da508a8e47cc5266abbcaa392a4216a33a621779
+PODFILE CHECKSUM: 12f8045084d0331ec9e8fdaa1f0aa8d0e309655d
 
 COCOAPODS: 1.9.1

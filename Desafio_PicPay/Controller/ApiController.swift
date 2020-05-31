@@ -7,24 +7,23 @@
 //
 
 import Foundation
+import Alamofire
 
 class ApiController{
     
     private static let session = URLSession.shared
     
     
-    //GET
+    //get
     class func loadData(page:Int,onComplete:@escaping ([receivedJson]?)->Void){
         let urlCompleta="http://careers.picpay.com/tests/mobdev/users"
-      
+        
         
         guard let url = URL(string: urlCompleta)else{
-            //Retorno para a closure o erro url contido no enum(carError)
             onComplete(nil)
             return}
         
         //Recebe os dados do servidor
-        //OBS: a dataTask é executada em outra thread, liberando o usuário para uso simultaneo no app
         let dataTask = session.dataTask(with: url) { (data:Data?, response:URLResponse?, error) in
             if error == nil{
                 guard let response = response as? HTTPURLResponse else{
@@ -57,4 +56,24 @@ class ApiController{
     }
     
     
+    //post
+    class func saveOperation(operation:encoderPostData, onComplete:@escaping (decoderPostData)->Void){
+        AF.request("http://careers.picpay.com/tests/mobdev/transaction", method: .post, parameters: operation, encoder: JSONParameterEncoder.default).response { response in
+            switch response.result {
+            case .success:
+                //show all returned information
+                let dados = response.data
+                
+                //decode response information from post
+                do {
+                    let model = try JSONDecoder().decode(decoderPostData.self, from: dados!)
+                                  onComplete(model)
+                              } catch {
+                                print("decode error")
+                              }
+            case .failure:
+                print("error")
+            }
+        }
+    }
 }

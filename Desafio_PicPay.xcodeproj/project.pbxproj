@@ -20,6 +20,10 @@
 		921E35AD247AB1D700B82968 /* Desafio_PicPay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 921E35AB247AB1D700B82968 /* Desafio_PicPay.xcdatamodeld */; };
 		921E35AF247AB1D900B82968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921E35AE247AB1D900B82968 /* Assets.xcassets */; };
 		921E35B2247AB1D900B82968 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921E35B0247AB1D900B82968 /* LaunchScreen.storyboard */; };
+		92375E36247FE64D002D47D7 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92375E35247FE64D002D47D7 /* PagamentoViewController.swift */; };
+		928EA8B824841F4B00C4E197 /* decoderPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928EA8B724841F4B00C4E197 /* decoderPostData.swift */; };
+		929D492F2480724E00A92C72 /* encoderPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929D492E2480724E00A92C72 /* encoderPostData.swift */; };
+		92E37EA4247F3F3D00664B95 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E37EA3247F3F3D00664B95 /* CoreDataController.swift */; };
 		FDF1207A3443643BD4428273 /* Pods_Desafio_PicPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CC9397048B85FA856B05F1 /* Pods_Desafio_PicPay.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		921E35AE247AB1D900B82968 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921E35B1247AB1D900B82968 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921E35B3247AB1D900B82968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92375E35247FE64D002D47D7 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
+		928EA8B724841F4B00C4E197 /* decoderPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decoderPostData.swift; sourceTree = "<group>"; };
+		929D492E2480724E00A92C72 /* encoderPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = encoderPostData.swift; sourceTree = "<group>"; };
+		92E37EA3247F3F3D00664B95 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		F2CC9397048B85FA856B05F1 /* Pods_Desafio_PicPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_PicPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				921C9F6F247AB5590067EC31 /* receivedJson.swift */,
+				929D492E2480724E00A92C72 /* encoderPostData.swift */,
+				928EA8B724841F4B00C4E197 /* decoderPostData.swift */,
 				921CDCFE247ADE2A00707C0B /* Contatos.swift */,
 			);
 			path = Model;
@@ -72,6 +82,7 @@
 				921C9F6D247AB3AD0067EC31 /* CustomViewCell.swift */,
 				920E063A247C5F63006567FE /* CadastrarCartaoMainViewController.swift */,
 				920E0636247C33F0006567FE /* CadastrarCartoesViewController.swift */,
+				92375E35247FE64D002D47D7 /* PagamentoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -80,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				921CDCFC247ADC7300707C0B /* ApiController.swift */,
+				92E37EA3247F3F3D00664B95 /* CoreDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,12 +267,16 @@
 				920E063B247C5F63006567FE /* CadastrarCartaoMainViewController.swift in Sources */,
 				921C9F6C247AB3840067EC31 /* ContatosTableView.swift in Sources */,
 				921C9F6E247AB3AD0067EC31 /* CustomViewCell.swift in Sources */,
+				929D492F2480724E00A92C72 /* encoderPostData.swift in Sources */,
 				921CDCFD247ADC7300707C0B /* ApiController.swift in Sources */,
+				928EA8B824841F4B00C4E197 /* decoderPostData.swift in Sources */,
 				921C9F70247AB5590067EC31 /* receivedJson.swift in Sources */,
+				92E37EA4247F3F3D00664B95 /* CoreDataController.swift in Sources */,
 				921CDCFF247ADE2A00707C0B /* Contatos.swift in Sources */,
 				921E35A3247AB1D700B82968 /* AppDelegate.swift in Sources */,
 				921E35A5247AB1D700B82968 /* SceneDelegate.swift in Sources */,
 				921E35AD247AB1D700B82968 /* Desafio_PicPay.xcdatamodeld in Sources */,
+				92375E36247FE64D002D47D7 /* PagamentoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

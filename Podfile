@@ -8,5 +8,6 @@ target 'Desafio_PicPay' do
   # Pods for Desafio_PicPay
 pod 'Kingfisher', '~> 5.13.4'
 pod 'TextFieldEffects'
+pod 'Alamofire', '~> 5.1'
 
 end

@@ -12,11 +12,11 @@ class CadastrarCartaoMainViewController: UIViewController {
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var labelSubtitulo: UILabel!
 
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
         //change background color
         self.view.backgroundColor = UIColor(named: "backGroundColor")
 
@@ -29,12 +29,10 @@ class CadastrarCartaoMainViewController: UIViewController {
         labelSubtitulo.textColor = UIColor.white
         
     }
-    
+
 
     @IBAction func btnCadastrar(_ sender: Any) {
         performSegue(withIdentifier: "segueCadastrar", sender: nil)
 
     }
-
-
 }

@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 
 
 class ContatosTableView: UITableViewController,UISearchBarDelegate {
     
-    
     var x:Int = 1
     var dadosRecebidos:[receivedJson]=[]
     var dadosFiltrados:[receivedJson]=[]
+    var senderUserInformation:receivedJson?
     var nomeUsuario:[String]=[]
     var imagemUsuario:[String]=[]
     var idUsuario:[String]=[]
@@ -29,32 +30,94 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //CONFIGURE SEARCHBAR
+//DELETE COREDATA
+//        let appDel:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+//        let context:NSManagedObjectContext = appDel.persistentContainer.viewContext
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
+//        fetchRequest.returnsObjectsAsFaults = false
+//
+//        do
+//        {
+//            let results = try context.fetch(fetchRequest)
+//            for managedObject in results
+//            {
+//                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+//                context.delete(managedObjectData)
+//                try context.save()
+//            }
+//        } catch let error as NSError {
+//            print("Deleted all my data in myEntity error : \(error) \(error.userInfo)")
+//        }
+        
+        
+        
+        //settings
+        configureSearchBar()
+        configureTableView()
+        configureStatusBar()
+        
+        //api services
+        callApi()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //settings
+        configureNavigationBar()
+    }
+    
+    //status bar settings
+    func configureStatusBar(){
+        //change status bar color
+        if #available(iOS 13, *){
+            let statusBar = UIView(frame: (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame)!)
+            statusBar.backgroundColor = UIColor(named: "backGroundColor")
+            UIApplication.shared.keyWindow?.addSubview(statusBar)
+        } else {
+            // ADD THE STATUS BAR AND SET A CUSTOM COLOR
+            let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+            if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
+                statusBar.backgroundColor = UIColor(named: "backGroundColor")
+            }
+            UIApplication.shared.statusBarStyle = .lightContent
+        }
+    }
+    
+    //navigation bar settings
+    func configureNavigationBar(){
+        navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    //tableview settings
+    func configureTableView(){
+        //change tableview color
+        tableView.backgroundColor = UIColor(named: "backGroundColor")
+    }
+    
+    //searchbar settings
+    func configureSearchBar(){
         searchController.searchBar.delegate = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Movies"
         searchController.searchBar.sizeToFit()
         searchController.searchBar.becomeFirstResponder()
+        //add search bar in navigation bar
         navigationItem.searchController = searchController
         
-        //API SERVICES
-        callApi()
+        //change searchbar text color
+        let textField = searchController.searchBar.searchTextField
+        textField.textColor = UIColor.white
         
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.hidesBarsOnSwipe = true
-    }
-    
-    
-    //SEARCHBAR - FILTRA ARRAY DE OBJETOS(CONTATOS)
+    //search bar text changed
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         dadosFiltrados = dadosRecebidos
-
+        
         if searchText.isEmpty{
             searchActive = false
             tableView.reloadData()
@@ -68,14 +131,14 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
         }
     }
     
-    //BOTÃO CANCELAR NA SEARCHBAR - RECARREGA A TABLEVIEW COM TODOS DADOS
+    //search bar cancel button clicked - reload all data in tableview
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
         tableView.reloadData()
     }
     
-
     
+    //call api data
     func callApi(){
         ApiController.loadData(page: x) { (response_) in
             if let dados = response_{
@@ -83,14 +146,14 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
                 self.dadosFiltrados = dados
             }
             
-            //UTILIZADO PARA SEARCHBAR
+            //utilized for search bar
             for dados in self.dadosRecebidos{
                 self.nomeUsuario.append(dados.name)
                 self.imagemUsuario.append(dados.img)
                 self.idUsuario.append(dados.username)
             }
             
-            //NECESSÁRIO POIS A TABLE VIEW É CARREGADA ANTES DOS DADOS SEREM BAIXADOS TOTALMENTE
+            //tableview reload after download data
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -107,16 +170,60 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
         }
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! CustomViewCell
-        
+        cell.contentView.backgroundColor = UIColor(named: "backGroundColor")
         if searchActive == false{
             cell.prepararCelula(contatos: dadosRecebidos[indexPath.row])
             return cell
         }else{
             cell.prepararCelula(contatos: dadosFiltrados[indexPath.row])
             return cell
+        }
+    }
+    
+    //cell selected
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let isRegistered:Bool
+        
+        isRegistered = CoreDataController.selectCard()
+        
+        
+        if isRegistered == true{
+            if searchActive == false{
+                senderUserInformation = dadosRecebidos[indexPath.row]
+                performSegue(withIdentifier: "seguePagamento", sender: nil)
+            }else{
+                senderUserInformation = dadosFiltrados[indexPath.row]
+                performSegue(withIdentifier: "seguePagamento", sender: nil)
+            }
+        }else{
+            //for new card register the button title is not changed
+            CadastrarCartoesViewController.isEdit = false
+            
+            performSegue(withIdentifier: "segueCadastroCartao", sender: nil)
+            print("no data recorded")
+        }
+    }
+    
+    //send data to pagamento view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "seguePagamento"{
+            let destino = segue.destination as! PagamentoViewController
+            
+            //send card data
+            destino.receivedCardNumber = CoreDataController.LocalcardNumber
+            destino.receivedRegisteredCardName = CoreDataController.LocalcardName
+            destino.receivedExpirationDateCard = CoreDataController.LocalcardEspirationDate
+            destino.receivedCvvCardNumber = CoreDataController.LocasCvvCardNumber
+            
+            //send user data
+            destino.receivedUrlImagem = senderUserInformation?.img
+            destino.receivedUserName = senderUserInformation?.username
+            destino.receivedUserId = senderUserInformation?.id
+            
+            
+            
         }
     }
 }
