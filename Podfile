@@ -9,5 +9,7 @@ target 'Desafio_PicPay' do
 pod 'Kingfisher', '~> 5.13.4'
 pod 'TextFieldEffects'
 pod 'Alamofire', '~> 5.1'
+pod 'CurrencyTextField'
+pod 'GPSMaskTextField', '~> 2.0.0'
 
 end

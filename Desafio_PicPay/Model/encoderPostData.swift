@@ -6,6 +6,11 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
+
+/**
+all data is encoded here after send to api server with post method
+*/
+
 import Foundation
 
 struct encoderPostData: Codable {

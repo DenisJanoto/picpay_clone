@@ -1,0 +1,6 @@
+framework module CurrencyTextField {
+  umbrella header "CurrencyTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

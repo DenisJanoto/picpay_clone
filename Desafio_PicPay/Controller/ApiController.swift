@@ -6,6 +6,11 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
+
+/**
+ class responsible to interact with api aerver
+ */
+
 import Foundation
 import Alamofire
 
@@ -15,7 +20,7 @@ class ApiController{
     
     
     //get
-    class func loadData(page:Int,onComplete:@escaping ([receivedJson]?)->Void){
+    class func loadData(onComplete:@escaping ([decoderGetData]?)->Void){
         let urlCompleta="http://careers.picpay.com/tests/mobdev/users"
         
         
@@ -37,7 +42,7 @@ class ApiController{
                     
                     //Tranformar json em array
                     do{
-                        let dados = try JSONDecoder().decode([receivedJson]?.self, from: data)
+                        let dados = try JSONDecoder().decode([decoderGetData]?.self, from: data)
                         onComplete(dados)
                     }catch{
                         print("ERRO3",error)

@@ -1,0 +1,6 @@
+framework module GPSMaskTextField {
+  umbrella header "GPSMaskTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

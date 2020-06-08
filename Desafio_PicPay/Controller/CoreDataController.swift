@@ -6,6 +6,11 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
+
+/**
+ classs responsible to save data card in the coredata
+ */
+
 import Foundation
 import UIKit
 import CoreData

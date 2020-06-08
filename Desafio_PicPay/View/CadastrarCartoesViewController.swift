@@ -6,23 +6,28 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
+
+/**
+ class responsible to save and edit card info
+ */
+
 import UIKit
-import TextFieldEffects
+import GPSMaskTextField
+
 
 class CadastrarCartoesViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var labelCadastrarCartao: UILabel!
-    @IBOutlet weak var txtNumeroCartao: HoshiTextField!
-    @IBOutlet weak var txtNomeTitular: HoshiTextField!
-    @IBOutlet weak var txtVencimento: HoshiTextField!
-    @IBOutlet weak var txtCvv: HoshiTextField!
+    @IBOutlet weak var txtNumeroCartao: GPSMaskTextField!
+    @IBOutlet weak var txtNomeTitular: GPSMaskTextField!
+    @IBOutlet weak var txtVencimento: GPSMaskTextField!
+    @IBOutlet weak var txtCvv: GPSMaskTextField!
     @IBOutlet weak var viewScroll: UIView!
     @IBOutlet weak var myScrollView: UIScrollView!
     @IBOutlet weak var btnOutletSalvar: UIButton!
     
     
     static var isEdit = false
-
     
     //card data
     var cardNumber:String?
@@ -31,8 +36,11 @@ class CadastrarCartoesViewController: UIViewController,UITextFieldDelegate {
     var cvvNumber:String?
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureView()
         configureLabels()
         configureTextFields()
@@ -40,6 +48,7 @@ class CadastrarCartoesViewController: UIViewController,UITextFieldDelegate {
         configureButton()
     }
     
+    //MARK: configure view
     func configureView(){
         viewScroll.becomeFirstResponder()
         viewScroll.isUserInteractionEnabled = true
@@ -57,20 +66,20 @@ class CadastrarCartoesViewController: UIViewController,UITextFieldDelegate {
         
     }
     
-    //hide keyboard
+    //MARK: hide keyboard
     @objc func tapRecognized() {
         view.endEditing(true)
     }
     
     
-    //buttonSettings
+    //MARK: buttonSettings
     func configureButton(){
         //change button title
         if CadastrarCartoesViewController.isEdit == false{
             btnOutletSalvar.setTitle("Cadastrar Cartão", for: .normal)
         }else{
             btnOutletSalvar.setTitle("Salvar Alteração", for: .normal)
-
+            
         }
         
     }
@@ -81,54 +90,57 @@ class CadastrarCartoesViewController: UIViewController,UITextFieldDelegate {
         labelCadastrarCartao.textColor = UIColor.white
     }
     
-    //textfield settings
+    //MARK: textfield settings
     func configureTextFields(){
         
-        //set textfield with registered card values
+        //txt cardnumber is selected when start
+        txtNumeroCartao.becomeFirstResponder()
         
+        
+        //set textfield with registered card values (when user edit info)
         txtNumeroCartao.text = cardNumber
         txtNomeTitular.text = nameRegisteredCard
         txtVencimento.text = expirationDate
         txtCvv.text = cvvNumber
-
-        txtNumeroCartao.delegate = self
-        txtNomeTitular.delegate = self
-        txtVencimento.delegate = self
-        txtCvv.delegate = self
         
-        txtNumeroCartao.becomeFirstResponder()
         
         //textfield card number
-       // txtNumeroCartao.keyboardType = .numberPad
-        txtNumeroCartao.placeholderColor = UIColor.white
-        txtNumeroCartao.borderActiveColor = UIColor.white
-        txtNumeroCartao.borderInactiveColor = UIColor.lightGray
         txtNumeroCartao.textColor = UIColor.white
+        txtNumeroCartao.attributedPlaceholder = NSAttributedString(string: "Número do Cartão",
+                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        let configTxtNumeroCartao = GPSMaskTextField()
+        configTxtNumeroCartao.customMask = "####.####.####.####"
+        configTxtNumeroCartao.maximumSize = 16
+        txtNumeroCartao.customMask = configTxtNumeroCartao.customMask
+        txtNumeroCartao.maximumSize = configTxtNumeroCartao.maximumSize
         
-        //textfield card user name
-       // txtNomeTitular.keyboardType = .numberPad
-        txtNomeTitular.placeholderColor = UIColor.white
-        txtNomeTitular.borderActiveColor = UIColor.white
-        txtNomeTitular.borderInactiveColor = UIColor.lightGray
+        //textfield card username
         txtNomeTitular.textColor = UIColor.white
+        txtNomeTitular.attributedPlaceholder = NSAttributedString(string: "Nome do Titular",
+                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         //textfield card finish date
-       // txtVencimento.keyboardType = .numberPad
-        txtVencimento.placeholderColor = UIColor.white
-        txtVencimento.borderActiveColor = UIColor.white
-        txtVencimento.borderInactiveColor = UIColor.lightGray
         txtVencimento.textColor = UIColor.white
+        txtVencimento.attributedPlaceholder = NSAttributedString(string: "Vencimento",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        let configTxtVencimento = GPSMaskTextField()
+        configTxtVencimento.customMask = "##/##"
+        configTxtVencimento.maximumSize = 4
+        txtVencimento.customMask = configTxtVencimento.customMask
+        txtVencimento.maximumSize = configTxtVencimento.maximumSize
         
         //textfield card cvv number
-      //  txtCvv.keyboardType = .numberPad
-        txtCvv.placeholderColor = UIColor.white
-        txtCvv.borderActiveColor = UIColor.white
-        txtCvv.borderInactiveColor = UIColor.lightGray
         txtCvv.textColor = UIColor.white
+        txtVencimento.attributedPlaceholder = NSAttributedString(string: "CVV",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        let configTxtCvv = GPSMaskTextField()
+        configTxtCvv.maximumSize = 3
+        txtCvv.maximumSize = configTxtCvv.maximumSize
+        
     }
     
     
-    //navigation bar settings
+    //MARK: navigationbar settings
     func configureNavigationBar(){
         
         //change navigation bar color
@@ -141,7 +153,7 @@ class CadastrarCartoesViewController: UIViewController,UITextFieldDelegate {
     }
     
     
-    //textfield return button clicked
+    //MARK: textfield "return" button clicked
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //jump to the next textfields
         if textField == txtNumeroCartao{
@@ -162,9 +174,16 @@ class CadastrarCartoesViewController: UIViewController,UITextFieldDelegate {
         return true
     }
     
-    //button save card
+    //MARK: button save card
     @IBAction func btnCadastrarCartao(_ sender: Any) {
-        CoreDataController.saveCard(cardNumber: txtNumeroCartao.text!, name: txtNomeTitular.text!, expirationDate: txtVencimento.text!, cvvNumber: txtCvv.text!)
+        
+        //remove "dots" from card number
+        let cardNumberFormated = txtNumeroCartao.text!.replacingOccurrences(of: ".", with: "")
+        
+        CoreDataController.saveCard(cardNumber: cardNumberFormated, name: txtNomeTitular.text!, expirationDate: txtVencimento.text!, cvvNumber: txtCvv.text!)
+        
+        //back to payment view
+        navigationController?.popViewController(animated: true)
     }
     
 }

@@ -6,6 +6,11 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
+
+/**
+ initial screen, class responsible to show all data contacts in tableview (received from api server)
+ */
+
 import UIKit
 import CoreData
 
@@ -13,43 +18,45 @@ import CoreData
 
 class ContatosTableView: UITableViewController,UISearchBarDelegate {
     
-    var x:Int = 1
-    var dadosRecebidos:[receivedJson]=[]
-    var dadosFiltrados:[receivedJson]=[]
-    var senderUserInformation:receivedJson?
+    //var x:Int = 1
+    var receivedData:[decoderGetData]=[]
+    var filteredData:[decoderGetData]=[]
+    var senderUserInformation:decoderGetData?
     var nomeUsuario:[String]=[]
     var imagemUsuario:[String]=[]
     var idUsuario:[String]=[]
     
-    var contatosFiltrados:[receivedJson]=[]
+    var contatosFiltrados:[decoderGetData]=[]
     var arrayNomes:[String]=[]
     let searchController = UISearchController(searchResultsController: nil)
     var searchActive = false
+    
+    @IBAction func UnwindView(segue: UIStoryboardSegue) {
+        
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//DELETE COREDATA
-//        let appDel:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
-//        let context:NSManagedObjectContext = appDel.persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
-//        fetchRequest.returnsObjectsAsFaults = false
-//
-//        do
-//        {
-//            let results = try context.fetch(fetchRequest)
-//            for managedObject in results
-//            {
-//                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-//                context.delete(managedObjectData)
-//                try context.save()
-//            }
-//        } catch let error as NSError {
-//            print("Deleted all my data in myEntity error : \(error) \(error.userInfo)")
-//        }
-        
-        
+        //        //DELETE ALL COREDATA DATA
+        //        let appDel:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        //        let context:NSManagedObjectContext = appDel.persistentContainer.viewContext
+        //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
+        //        fetchRequest.returnsObjectsAsFaults = false
+        //
+        //        do
+        //        {
+        //            let results = try context.fetch(fetchRequest)
+        //            for managedObject in results
+        //            {
+        //                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+        //                context.delete(managedObjectData)
+        //                try context.save()
+        //            }
+        //        } catch let error as NSError {
+        //            print("Deleted all my data in myEntity error : \(error) \(error.userInfo)")
+        //        }
         
         //settings
         configureSearchBar()
@@ -75,7 +82,7 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
             statusBar.backgroundColor = UIColor(named: "backGroundColor")
             UIApplication.shared.keyWindow?.addSubview(statusBar)
         } else {
-            // ADD THE STATUS BAR AND SET A CUSTOM COLOR
+            //add status bar and set the custom color
             let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
             if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
                 statusBar.backgroundColor = UIColor(named: "backGroundColor")
@@ -116,14 +123,14 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
     
     //search bar text changed
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        dadosFiltrados = dadosRecebidos
+        filteredData = receivedData
         
         if searchText.isEmpty{
             searchActive = false
             tableView.reloadData()
         }else{
             searchActive=true
-            dadosFiltrados = dadosFiltrados.filter({(dados) -> Bool in
+            filteredData = filteredData.filter({(dados) -> Bool in
                 let x = dados.name.range(of:searchText,options: .caseInsensitive)
                 return x != nil
             })
@@ -140,20 +147,13 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
     
     //call api data
     func callApi(){
-        ApiController.loadData(page: x) { (response_) in
-            if let dados = response_{
-                self.dadosRecebidos=dados
-                self.dadosFiltrados = dados
+        ApiController.loadData() { (response_) in
+            if let data = response_{
+                self.receivedData = data
+                self.filteredData = data
             }
             
-            //utilized for search bar
-            for dados in self.dadosRecebidos{
-                self.nomeUsuario.append(dados.name)
-                self.imagemUsuario.append(dados.img)
-                self.idUsuario.append(dados.username)
-            }
-            
-            //tableview reload after download data
+            //reload tableview after download data
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -164,9 +164,9 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchActive{
-            return dadosFiltrados.count
+            return filteredData.count
         }else{
-            return dadosRecebidos.count
+            return receivedData.count
         }
     }
     
@@ -174,10 +174,10 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! CustomViewCell
         cell.contentView.backgroundColor = UIColor(named: "backGroundColor")
         if searchActive == false{
-            cell.prepararCelula(contatos: dadosRecebidos[indexPath.row])
+            cell.prepararCelula(contatos: receivedData[indexPath.row])
             return cell
         }else{
-            cell.prepararCelula(contatos: dadosFiltrados[indexPath.row])
+            cell.prepararCelula(contatos: filteredData[indexPath.row])
             return cell
         }
     }
@@ -191,10 +191,10 @@ class ContatosTableView: UITableViewController,UISearchBarDelegate {
         
         if isRegistered == true{
             if searchActive == false{
-                senderUserInformation = dadosRecebidos[indexPath.row]
+                senderUserInformation = receivedData[indexPath.row]
                 performSegue(withIdentifier: "seguePagamento", sender: nil)
             }else{
-                senderUserInformation = dadosFiltrados[indexPath.row]
+                senderUserInformation = filteredData[indexPath.row]
                 performSegue(withIdentifier: "seguePagamento", sender: nil)
             }
         }else{

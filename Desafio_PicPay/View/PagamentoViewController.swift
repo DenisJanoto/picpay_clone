@@ -6,8 +6,15 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
+
+/**
+ class responsible to execute the payment. the post is sended to api server with data card and value from payment.
+ if post response is successful, the reciboViewController is called.
+ */
+
 import UIKit
 import Kingfisher
+import CurrencyTextField
 
 class PagamentoViewController: UIViewController {
     
@@ -15,10 +22,8 @@ class PagamentoViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var lblEditar: UILabel!
     @IBOutlet weak var cardNumber: UILabel!
-    @IBOutlet weak var lblFinalCard: UILabel!
-    @IBOutlet weak var txtValue: UITextField!
-    
-    
+    @IBOutlet weak var txtValue: CurrencyTextField!
+    @IBOutlet weak var lblPagamentoRecusado: UILabel!
     
     
     //user data
@@ -26,12 +31,18 @@ class PagamentoViewController: UIViewController {
     var receivedUrlImagem:String!
     var receivedUserId:Int!
     
+    //kingfisher
+    var resource:ImageResource!
+    
     
     //card data
     var receivedCardNumber:String!
     var receivedRegisteredCardName:String!
     var receivedExpirationDateCard:String!
     var receivedCvvCardNumber:String!
+    
+    //transaction data
+    var transactionNumber:String!
     
     
     //read core data after info card is edited
@@ -43,8 +54,8 @@ class PagamentoViewController: UIViewController {
         receivedRegisteredCardName = CoreDataController.LocalcardName
         receivedExpirationDateCard = CoreDataController.LocalcardEspirationDate
         receivedCvvCardNumber = CoreDataController.LocasCvvCardNumber
-        
-        cardNumber.text = receivedCardNumber
+        setViewInformation()
+
     }
     
     
@@ -55,7 +66,6 @@ class PagamentoViewController: UIViewController {
         configureView()
         configureNavigationBar()
         configureLabels()
-        setViewInformation()
         
     }
     
@@ -81,7 +91,6 @@ class PagamentoViewController: UIViewController {
         userName.textColor = UIColor.white
         lblEditar.textColor = UIColor(named: "defaultItensColor")
         cardNumber.textColor = UIColor.white
-        lblFinalCard.textColor = UIColor.white
         
         
         self.lblEditar.isUserInteractionEnabled = true
@@ -96,7 +105,7 @@ class PagamentoViewController: UIViewController {
     }
     
     
-    //send card data to edit view
+    //send card data to edit card view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "seguePagamento"{
             let destino = segue.destination as! CadastrarCartoesViewController
@@ -105,26 +114,43 @@ class PagamentoViewController: UIViewController {
             destino.expirationDate = receivedExpirationDateCard
             destino.cvvNumber = receivedCvvCardNumber
         }
+        
+        //send data to recibo view controller
+        if segue.identifier == "segueRecibo"{
+            let nav = segue.destination as! UINavigationController
+            let destino = nav.topViewController as! ReciboViewController
+            destino.imagem_usuario = resource
+            destino.nome_suario = receivedUserName
+            destino.numero_transacao = transactionNumber
+            destino.numero_cartao = receivedCardNumber
+            destino.valor_total = txtValue.text
+        }
     }
     
     
     //pay button
     @IBAction func btnPagar(_ sender: Any) {
         
-        
-        let value_ = txtValue.text
+        //new object to send to server by post method
         var saveData = encoderPostData()
-        
         saveData.cardNumber = receivedCardNumber
         saveData.cvv = Int(receivedCvvCardNumber) ?? 0
-        saveData.value = (value_! as NSString).doubleValue
+        saveData.value = (txtValue.text! as NSString).doubleValue
         saveData.expiryDate = receivedExpirationDateCard
         saveData.destinationUserId = Int(receivedUserId)
-     
-         
+        
+        
         ApiController.saveOperation(operation: saveData) { (success) in
-            print(success.transaction?.id)
-            print(success.transaction?.status)
+            if success.transaction?.status == "Recusada"{
+                self.lblPagamentoRecusado.isHidden = false
+            }else{
+                self.transactionNumber = "\(success.transaction?.id ?? 0)"
+                self.lblPagamentoRecusado.isHidden = true
+                
+                //show rebido screen
+                self.performSegue(withIdentifier: "segueRecibo", sender: nil)
+                
+            }
         }
         
         
@@ -133,8 +159,15 @@ class PagamentoViewController: UIViewController {
     
     
     func setViewInformation(){
+        //set user name
         userName.text = receivedUserName
-
+        
+        //get the last 4 digits card
+        let finalCard = receivedCardNumber.suffix(4)
+        //set card number
+        cardNumber.text = "Cartão Final - \(finalCard)"
+        
+        //set user image
         getImageFromApi()
         
     }
@@ -143,7 +176,7 @@ class PagamentoViewController: UIViewController {
     //kingfisher image download
     func getImageFromApi(){
         if let url = URL.init(string:self.receivedUrlImagem){
-            let resource = ImageResource(downloadURL: url, cacheKey: self.receivedUrlImagem)
+            resource = ImageResource(downloadURL: url, cacheKey: self.receivedUrlImagem)
             userImage.kf.indicatorType = .activity //Placeholder nas imagens antes de carregar
             userImage.kf.setImage(with: resource)
             
@@ -160,3 +193,4 @@ class PagamentoViewController: UIViewController {
         view.endEditing(true)
     }
 }
+

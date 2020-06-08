@@ -6,6 +6,11 @@
 //  Copyright © 2020 Denis Janoto. All rights reserved.
 //
 
+
+/**
+ class responsible to configure custom cell from tableview
+ */
+
 import UIKit
 import Kingfisher
 
@@ -33,7 +38,7 @@ class CustomViewCell: UITableViewCell {
  
     
     //MONTAR CELULA SEM A PESQUISA DA SEARCHBAR
-    func prepararCelula(contatos:receivedJson){
+    func prepararCelula(contatos:decoderGetData){
         urlImagem = contatos.img
         name.text = contatos.name
         userName.text = contatos.username

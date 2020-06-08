@@ -5,6 +5,11 @@
 //  Created by Denis Janoto on 25/05/20.
 //
 
+
+/**
+ screen showed before saveDataCard screen
+ */
+
 import UIKit
 
 class CadastrarCartaoMainViewController: UIViewController {
@@ -24,6 +29,9 @@ class CadastrarCartaoMainViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = UIColor(named: "backGroundColor")
         
+        //change navigation bar title color
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+
         //change label color
         labelTitulo.textColor = UIColor.white
         labelSubtitulo.textColor = UIColor.white

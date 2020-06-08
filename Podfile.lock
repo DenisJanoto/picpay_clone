@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.1.0)
+  - CurrencyTextField (2.3)
+  - GPSMaskTextField (2.0.0)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
@@ -7,20 +9,26 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
+  - CurrencyTextField
+  - GPSMaskTextField (~> 2.0.0)
   - Kingfisher (~> 5.13.4)
   - TextFieldEffects
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CurrencyTextField
+    - GPSMaskTextField
     - Kingfisher
     - TextFieldEffects
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  CurrencyTextField: 75d8ee80cf245925684b34c9a49ba886f258e2dc
+  GPSMaskTextField: 3a8ac49537b53dcbbb828642ad4c9604707fbc9c
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 12f8045084d0331ec9e8fdaa1f0aa8d0e309655d
+PODFILE CHECKSUM: 395589aa5e86ba6361996617431032c7e76f3dc2
 
 COCOAPODS: 1.9.1
