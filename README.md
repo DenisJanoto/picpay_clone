@@ -3,7 +3,7 @@ Projeto realizado para o desafio ios developer da empresa PicPay - Desenvolvido 
 
 # Objetivo
 
-Possibilitar o usuário cadastrar um cartão de crédito e realizar um pagamento para uma determinada pessoa previamente retornada de uma api. A transação para o usuário também é realizada via api, podendo a transação ser aceita ou negada de acordo com a premissa informada abaixo.
+Possibilitar ao usuário cadastrar um cartão de crédito e realizar um pagamento para uma determinada pessoa previamente retornada de uma api. A transação para o usuário também é realizada via api, podendo a transação ser aceita ou negada de acordo com a premissa informada abaixo.
 OBS: QUALQUER NÚMERO DE CARTÃO CADASTRADO DIFERENTE DE 1111.1111.1111.1111 a transação é recusada
 
 ## Features
